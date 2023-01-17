@@ -146,16 +146,21 @@ body {
 }
 
 .navigation__wrapper {
+    display: none;
     flex-direction: column;
     order: 4;
     position: absolute;
     top: 0;
-    width: 113vw;
-    height: 91vh;
+    width: 100%;
+    height: 100%;
     background: #fff;
-    transform: translate(-19vw, 60px);
+    transform: translate(0, 60px);
     z-index: 4;
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 1px 7px rgb(0 0 0 / 9%);
+}
+
+.navigation__list-desc {
+    display: none;
 }
 
 .navigation__list {
@@ -165,7 +170,7 @@ body {
 .navigation__link {
     display: flex;
     justify-content: space-between;
-    padding: 15px 15vw 15px 18vw;
+    padding: 15px 12vw 15px 10vw;
     font-family: inherit;
     font-weight: 400;
     font-size: 15px;
@@ -183,8 +188,8 @@ body {
 }
 
 .navigation__column {
-    height: 40vh;
-    padding: 20px 18vw;
+    height: 40%;
+    padding: 15px 12vw 15px 10vw;
     font-family: inherit;
     font-weight: 600;
     font-size: 16px;
@@ -922,10 +927,12 @@ margin-bottom: 20px;
         padding: 0;
     }
 
-    .navigation__wrapper {
-        width: 118vw;
-        height: 91vh;
-        transform: translate(-24vw, 58px);    
+    .navigation__link {
+        padding: 15px 10vw 15px 10vw;
+    }
+    
+    .navigation__column {
+        padding: 15px 10vw 15px 10vw;
     }
 }
 
@@ -935,12 +942,13 @@ margin-bottom: 20px;
         padding: 0;
     }
 
-    .navigation__wrapper {
-        width: 110vw;
-        height: 91vh;
-        transform: translate(-18vw, 58px);
+    .navigation__link {
+        padding: 15px 12vw 15px 10vw;
     }
-    
+
+    .navigation__column {
+        padding: 15px 12vw 15px 10vw;
+    }
     
     .houses-baths {
         padding-top: 71px;
@@ -1040,8 +1048,7 @@ margin-bottom: 20px;
     }
 
     .our-work {
-        position: relative;
-        
+        position: relative;   
     }
 
     .our-work::before {
@@ -1125,20 +1132,10 @@ margin-bottom: 20px;
     .navigation__button {
         display: none;
     }
-
-    .page-header__closed .navigation__wrapper {
-        display: flex;
-        transform: none;
-        box-shadow: none;
-    }
     
+    .page-header__opened .navigation__wrapper,
     .navigation__wrapper {
-        display: flex;
-        position: relative;
-        top: -9px;
-        flex-direction: row;
-        width: auto;
-        height: auto;
+        display: none;
     }
 
     .link-svg {
@@ -1150,8 +1147,11 @@ margin-bottom: 20px;
     }
     
     .navigation__list {
+        position: relative;
         display: flex;
-        gap: 0 45px;
+        gap: 0 38px;
+        order: 2;
+        margin: auto;
     }
 
     .navigation__column {
@@ -1194,6 +1194,10 @@ margin-bottom: 20px;
         display: none;
     }
     
+    .navigation__item {
+        position: relative;
+    }
+
     .button-phone__link-mobil {
         display: none;
     }
@@ -1202,12 +1206,15 @@ margin-bottom: 20px;
         padding-right: 14px;
     }
     
-    .submenu-project:hover>.submenu-project__list,
-    .submenu-project:active>.submenu-project__list,
-    .submenu-project:focus-within .submenu-project__list,
-    .submenu-services:hover>.submenu-services__list,
-    .submenu-services:active>.submenu-services__list,
-    .submenu-services:focus-within .submenu-services__list {
+    .submenu-project_desc:hover>.submenu-project__list_desc,
+    .submenu-project_desc:active>.submenu-project__list_desc,
+    .submenu-project_desc:focus-within .submenu-project__list_desc,
+    .submenu-services_desc:hover>.submenu-services__list_desc,
+    .submenu-services_desc:active>.submenu-services__list_desc,
+    .submenu-services_desc:focus-within .submenu-services__list_desc {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
         top: 49px;
         left: -20px;
         width: 15vw;
@@ -1217,6 +1224,7 @@ margin-bottom: 20px;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.07);
         border-radius: 0px 0px 5px 5px;
         transform: none;    
+        z-index: 1;
     }
     
     .navigation__list-submenu .navigation__link {
@@ -1432,7 +1440,7 @@ margin-bottom: 20px;
     }
 
     .our-work__link {
-        padding: 15px 35px;
+        padding: 15px 30px;
         font-size: 16px;
         line-height: 22px;
     }
@@ -1592,7 +1600,7 @@ margin-bottom: 20px;
 
     .footer-main__column:last-child {
         margin-left: auto;
-        padding-right: 115px;    
+        padding-right: 108px;    
     }
 
     .list-link {
