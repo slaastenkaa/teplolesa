@@ -7,23 +7,14 @@ navButton.addEventListener("click", (function() {
 }
 ));
 
-
-const submenuProjectMobil = document.querySelector(".submenu-project");
-const submenuProjectListMobil = document.querySelector(".submenu-project__list");
-const submenuServicesMobil = document.querySelector(".submenu-services");
-const submenuServicesListMobil = document.querySelector(".submenu-services__list");
+const navItem = document.querySelectorAll('.navigation__item');
+const submenuClose = document.querySelectorAll(".navigation__list-submenu");
 const mobilebutton = document.querySelectorAll(".navigation__item-mobil");
-submenuProjectMobil.addEventListener("click", (function() {
-    submenuProjectListMobil.classList.contains("submenu") ? submenuProjectListMobil.classList.remove("submenu") : submenuProjectListMobil.classList.add("submenu");
-}
-));
 
-submenuServicesMobil.addEventListener("click", (function() {
-    submenuServicesListMobil.classList.contains("submenu") ? submenuServicesListMobil.classList.remove("submenu") : submenuServicesListMobil.classList.add("submenu");
-}
-));
+navItem.forEach((e=>e.addEventListener("click", (e=>{
 
-mobilebutton.addEventListener("click", (function() {
-    submenuServicesListMobil.classList.contains("submenu") ? submenuServicesListMobil.classList.remove("submenu") : submenuServicesListMobil.classList.add("submenu");
-}
-));
+    // navItem.classList.contains("submenu") ? (submenuClose.classList.remove("submenu__close"),
+    // submenuClose.classList.add("submenu__open")) : (submenuClose.classList.add("submenu__close"),
+    // submenuClose.classList.remove("submenu__open"))
+
+}))));
